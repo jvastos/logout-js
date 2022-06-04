@@ -1,31 +1,45 @@
+import dotenv from 'dotenv';
+dotenv.config();
 import express from 'express';
 import { Octokit } from 'octokit';
 
 const app = express();
+
+const PORT = 8080;
 
 const octokit = new Octokit({
     auth: process.env.REACT_APP_GH_TOKEN,
     userAgent: 'jvastos',
 });
 
-app.get('/hello', (req, res) => {
-    res.send('Hello there!').end();
+app.get('/gh-api/repos-list', async (req, res) => {
+    const userName = req.query.username;
+
+    const repoList = await octokit.request(
+        'GET /users/{userName}/repos?per_page=100',
+        {
+            userName: `${userName}`,
+        }
+    );
+    res.json(repoList.data);
 });
 
-app.get('/gh-api', async (req, res) => {
+app.get('/gh-api/repos-search', async (req, res) => {
+    const userName = req.query.username;
+    const repoName = req.query.reponame;
+
     const consoleLogs = await octokit.request(
-        'GET /search/code?q=console.log+in:{in}+language:{language}+repo:{user}/{repo}',
+        'GET /search/code?q={searchString}+in:{in}+language:{language}+repo:{userName}/{repoName}',
         {
             in: 'file',
             language: 'js',
-            user: 'jvastos',
-            repo: 'schmemory',
+            searchString: 'console.log',
+            userName: `${userName}`,
+            repoName: `${repoName}`,
         }
     );
-    res.json(consoleLogs);
+    res.json(consoleLogs.data);
 });
-
-const PORT = 8080;
 
 app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);
