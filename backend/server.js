@@ -30,7 +30,7 @@ app.get('/gh-api/repos-list', async (req, res) => {
             userName: `${userName}`,
         }
     );
-    res.json(repoList.data);
+    res.send(repoList.data);
 });
 
 app.get('/gh-api/repos-search', async (req, res) => {
