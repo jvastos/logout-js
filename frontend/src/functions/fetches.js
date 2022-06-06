@@ -11,7 +11,6 @@ export async function fetchRepos(userName) {
 }
 
 export async function scanRepos(userName, repoName) {
-    console.log('scanRepos triggered');
     let consoleLogInfo = [];
     await fetch(
         `${API_BASE_URL}repos-search?username=${userName}&reponame=${repoName}`

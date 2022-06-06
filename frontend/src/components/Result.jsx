@@ -2,7 +2,6 @@ import React from "react";
 
 function Result(props) {
     
-    const userName = props.userName;
     const result = props.result;
     const consoleLogQtt = result[0].total_count;
     const consoleLogInfo = result[0].items&&result[0].items
