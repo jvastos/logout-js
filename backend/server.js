@@ -2,6 +2,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 import express from 'express';
 import { Octokit } from 'octokit';
+import cors from 'cors';
 
 const app = express();
 
@@ -12,6 +13,14 @@ const octokit = new Octokit({
     userAgent: 'jvastos',
 });
 
+app.use(
+    cors({
+        origin: 'http://localhost:3000',
+    })
+);
+
+app.use(express.json());
+
 app.get('/gh-api/repos-list', async (req, res) => {
     const userName = req.query.username;
 
@@ -21,7 +30,7 @@ app.get('/gh-api/repos-list', async (req, res) => {
             userName: `${userName}`,
         }
     );
-    res.json(repoList.data);
+    res.send(repoList.data);
 });
 
 app.get('/gh-api/repos-search', async (req, res) => {
