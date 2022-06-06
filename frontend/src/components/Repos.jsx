@@ -1,5 +1,6 @@
 import React from "react";
 import { scanRepos } from "../functions/fetches.js";
+import { ReposContainer } from './styles/Repos.styled.js'
 
 function Repos(props) {
     const userName = props.userName;
@@ -15,8 +16,8 @@ function Repos(props) {
     }
     
     return (
-        <>
-            <p>Your public repositories:</p>
+        <ReposContainer>
+            <h4>Your public repositories:</h4>
             <ul>
                 {reposNames.map((i) => 
                     <li key={i}>
@@ -27,7 +28,7 @@ function Repos(props) {
                         </a>
                     </li>)}
             </ul>
-        </>
+        </ReposContainer>
         )
 }
 

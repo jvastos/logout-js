@@ -1,4 +1,5 @@
 import React from "react";
+import { ResultContainer } from './styles/Result.styled.js'
 
 function Result(props) {
     
@@ -7,8 +8,8 @@ function Result(props) {
     const consoleLogInfo = result[0].items&&result[0].items
     
     return (
-        <div>
-            <h2>{consoleLogQtt} "console.log" found at:</h2>
+        <ResultContainer>
+            <h4><u>{consoleLogQtt}</u> "console.log" found at:</h4>
             <ul>
                 {consoleLogInfo&&consoleLogInfo.map(i => 
                     <li key={i.name}>
@@ -16,8 +17,7 @@ function Result(props) {
                     </li>
                 )}
             </ul>
-
-        </div>
+        </ResultContainer>
     )
 }
 
