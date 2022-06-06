@@ -7,11 +7,12 @@ function SearchBlock(props) {
     const userName = props.userName;
     const setUserName = props.setUserName;
     const setRepos = props.setRepos;
+    const setRepoToScan = props.setRepoToScan;
 
     return(
         <>
-            <InputField setUserName={setUserName} />
-            <GoButton userName={userName} setRepos={setRepos} />
+            <InputField />
+            <GoButton userName={userName} setRepos={setRepos} setUserName={setUserName} setRepoToScan={setRepoToScan} />
         </>
     )
 }

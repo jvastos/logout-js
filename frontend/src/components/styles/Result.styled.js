@@ -7,6 +7,6 @@ export const ResultContainer = styled.div`
     border: 2px solid white;
     border-radius: 15px;
     overflow-wrap: break-word;
-    min-width: 300px;
+    min-width: 250px;
     margin-top: 2vmax;
 `;

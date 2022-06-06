@@ -8,9 +8,10 @@ import GlobalStyles from './components/styles/Global.js';
 import { ReposResultWrapper } from './components/styles/ReposResultWrapper.styled';
 
 function App() {
-    const [userName, setUserName] = useState('');
+    const [userName, setUserName] = useState();
     const [repos, setRepos] = useState();
-    const [result, setResult] = useState();
+    const [repoToScan, setRepoToScan] = useState();
+    const [displayResult, setDisplayResult] = useState(false);
 
     return (
         <>
@@ -18,10 +19,10 @@ function App() {
             <Container>
                 <Logo>Logout.js</Logo>
                 <p>Enter your Github username</p>
-                <SearchBlock userName={userName} setUserName={setUserName} setRepos={setRepos} />
+                <SearchBlock userName={userName} setUserName={setUserName} setRepos={setRepos} setRepoToScan={setRepoToScan} />
                 <ReposResultWrapper>
-                    {repos && <Repos userName={userName} repos={[repos]} setResult={setResult} />}
-                    {result && <Result result={[result]} />}
+                    {repos && <Repos userName={userName} repos={[repos]} setRepoToScan={setRepoToScan} />}
+                    {repoToScan && <Result userName={userName} repoToScan={repoToScan} />}
                 </ReposResultWrapper>
             </Container>
         </>

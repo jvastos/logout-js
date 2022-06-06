@@ -4,9 +4,9 @@ function InputField(props) {
 
     const setUserName = props.setUserName;
 
-    function updateState(e) {
+    /* function updateState(e) {
         setUserName(e.target.value);
-    }
+    } */
 
     return (
         <input
@@ -14,7 +14,8 @@ function InputField(props) {
         placeholder='username' 
         aria-label='username'
         aria-describedby='userneame input field'
-        onChange={updateState}/>
+        /* onChange={updateState} */
+        id='input'/>
     )
 
 }
