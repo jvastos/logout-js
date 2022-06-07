@@ -11,7 +11,6 @@ function App() {
     const [userName, setUserName] = useState();
     const [repos, setRepos] = useState();
     const [repoToScan, setRepoToScan] = useState();
-    const [displayResult, setDisplayResult] = useState(false);
 
     return (
         <>
@@ -19,10 +18,23 @@ function App() {
             <Container>
                 <Logo>Logout.js</Logo>
                 <p>Enter your Github username</p>
-                <SearchBlock userName={userName} setUserName={setUserName} setRepos={setRepos} setRepoToScan={setRepoToScan} />
+                {/* prettier-ignore */}
+                <SearchBlock 
+                userName={userName} 
+                setUserName={setUserName} 
+                setRepos={setRepos} 
+                setRepoToScan={setRepoToScan} />
+                {/* prettier-ignore */}
                 <ReposResultWrapper>
-                    {repos && <Repos userName={userName} repos={[repos]} setRepoToScan={setRepoToScan} />}
-                    {repoToScan && <Result userName={userName} repoToScan={repoToScan} />}
+                    {repos && 
+                    <Repos 
+                    userName={userName} 
+                    repos={[repos]} 
+                    setRepoToScan={setRepoToScan} />}
+                    {repoToScan && 
+                    <Result 
+                    userName={userName} 
+                    repoToScan={repoToScan} />}
                 </ReposResultWrapper>
             </Container>
         </>

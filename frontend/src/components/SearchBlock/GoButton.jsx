@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import { fetchRepos } from '../../functions/fetches';
 
 function GoButton(props) {
@@ -7,20 +7,21 @@ function GoButton(props) {
     const setRepos = props.setRepos;
     const setRepoToScan = props.setRepoToScan;
 
-    async function searchRepos() {
+    //Function to fetch the public repos of the given username.
+    //It also decides if the result box should be displayed on the interface.
+    //(because if a new user is given through the input field, we want to hide the result from the last clicked repo of the previous given user.)
+    async function getRepos() {
         const inputValue = document.getElementById('input').value;
         console.log(inputValue);
-        if(inputValue != userName) {
+        if (inputValue !== userName) {
             setUserName(inputValue);
             const repos = await fetchRepos(inputValue);
             setRepos(repos);
-            setRepoToScan();
+            setRepoToScan(); //this makes the result box disappear on the interface.
         }
     }
 
-    return (
-        <button onClick={searchRepos}>Go</button>
-    )
+    return <button onClick={getRepos}>Go</button>;
 }
 
 export default GoButton;

@@ -1,6 +1,8 @@
 # Logout.js
 
-Find the console.logs you've forgotten to remove from your Javascript files.
+Find the console.logs you might have forgotten to remove from your Javascript files.
+
+This is a simple React application using the GitHub API to fetch the public repositories of a given username and to scan the code in each of this repositories for "console.log" occurrences.
 
 <img width="720" alt="Screen Shot 2022-06-06 at 16 23 00" src="https://user-images.githubusercontent.com/85259118/172180456-fd526d01-8a1f-4013-9616-c101f49dc942.png">
 
@@ -8,9 +10,9 @@ Find the console.logs you've forgotten to remove from your Javascript files.
 
 #### Tech stack 📚
 
-1. React.js. For it's scalability.
-2. Node.js. For it's easyness of use, easyness to connect with MongoDB (which would be a logic next step to the project), broad community support and because of Express.
-3. Express. For it's easyness of use and easyness to connect with MongoDB.
+1. React.js. For its scalability.
+2. Node.js. For its easyness of use, easyness to connect with MongoDB (which would be a logic next step to the project), broad community support and because of Express.
+3. Express. For its easyness of use and easyness to connect with MongoDB.
 
 #### Other tech bits 🔩
 
