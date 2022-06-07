@@ -8,6 +8,8 @@ import GlobalStyles from './components/styles/Global.js';
 import { ReposResultWrapper } from './components/styles/ReposResultWrapper.styled';
 
 function App() {
+    document.title = 'Logout.js';
+
     const [userName, setUserName] = useState();
     const [repos, setRepos] = useState();
     const [repoToScan, setRepoToScan] = useState();
