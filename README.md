@@ -2,7 +2,7 @@
 
 Find the console.logs you might have forgotten to remove from your Javascript files.
 
-This is a simple React application using the GitHub API to fetch the public repositories of a given username and to scan the code in each of this repositories for "console.log" occurrences.
+This is a simple React application using the GitHub API (REST) to fetch the public repositories of a given username and to scan the code in each of this repositories for "console.log" occurrences.
 
 <img width="720" alt="Screen Shot 2022-06-06 at 16 23 00" src="https://user-images.githubusercontent.com/85259118/172180456-fd526d01-8a1f-4013-9616-c101f49dc942.png">
 
