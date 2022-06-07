@@ -6,19 +6,23 @@ export async function fetchRepos(userName) {
         .then((res) => res.json())
         .then((data) => {
             repos = data;
+        })
+        .catch((error) => {
+            console.log('There was an error fecthing the repos', error);
         });
     return repos;
 }
 
 export async function scanRepos(userName, repoName) {
     let consoleLogInfo = [];
-    await fetch(
-        `${API_BASE_URL}repos-search?username=${userName}&reponame=${repoName}`
-    )
+    await fetch(`${API_BASE_URL}repos-search?username=${userName}&reponame=${repoName}`)
         .then((res) => res.json())
         .then((data) => {
             consoleLogInfo = data;
             console.log(consoleLogInfo);
+        })
+        .catch((error) => {
+            console.log('There was an error searching for console.logs', error);
         });
     return consoleLogInfo;
 }

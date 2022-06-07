@@ -6,4 +6,8 @@ export const ReposResultWrapper = styled.div`
     justify-content: space-evenly;
     align-items: flex-start;
     margin-bottom: 2vmax;
+
+    @media (max-width: 768px) {
+        flex-wrap: wrap-reverse;
+    }
 `;
