@@ -15,6 +15,7 @@ function Result(props) {
             setResult(scanResult);
         }
         createScanResult(userName, repoToScan);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [repoToScan]);
 
     const consoleLogQtt = result.total_count;
