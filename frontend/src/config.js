@@ -1,1 +1,1 @@
-export const API_BASE_URL = 'http://localhost:8080/gh-api/';
+export const API_BASE_URL = 'https://logout-js.herokuapp.com/gh-api/';
