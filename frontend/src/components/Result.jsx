@@ -44,7 +44,8 @@ function Result(props) {
                             {/* prettier-ignore */}
                             <a 
                             href={i.html_url} 
-                            target="_blank">
+                            target="_blank"
+                            rel="noreferrer">
                                 {i.path}
                             </a>
                         </li>
