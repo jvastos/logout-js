@@ -13,4 +13,5 @@ export const LinkButton = styled.button`
     line-height: 1.6;
     white-space: normal;
     word-break: break-word;
+    cursor: pointer;
 `;
