@@ -19,7 +19,6 @@ export async function scanRepos(userName, repoName) {
         .then((res) => res.json())
         .then((data) => {
             consoleLogInfo = data;
-            console.log(consoleLogInfo);
         })
         .catch((error) => {
             console.log('There was an error searching for console.logs', error);

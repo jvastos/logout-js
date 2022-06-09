@@ -13,7 +13,6 @@ function GoButton(props) {
     //(because if a new user is given through the input field, we want to hide the result from the last clicked repo of the previous given user.)
     async function getRepos() {
         const inputValue = document.getElementById('input').value;
-        console.log(inputValue);
         if (!inputValue) {
             alert('Please enter username.');
         } else if (inputValue !== userName) {
