@@ -1,5 +1,6 @@
 import React from 'react';
 import { ReposContainer } from './styles/Repos.styled.js';
+import { LinkButton } from './styles/LinkButton.styled.js';
 
 function Repos(props) {
     const userName = props.userName;
@@ -17,11 +18,11 @@ function Repos(props) {
                 {reposNames.map((i) => (
                     <li key={i}>
                         {/* prettier-ignore */}
-                        <a 
-                        href='#result' 
+                        <LinkButton
+                        href='#'
                         onClick={() => setRepoToScan(i)}>
                             {i}
-                        </a>
+                        </LinkButton>
                     </li>
                 ))}
             </ul>

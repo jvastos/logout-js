@@ -1,9 +1,10 @@
 import React from 'react';
+import { Input } from '../../components/styles/Input.styled.js';
 
 function InputField() {
     return (
         // prettier-ignore
-        <input 
+        <Input 
         type="text" 
         placeholder="username" 
         aria-label="username" 

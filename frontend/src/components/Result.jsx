@@ -2,6 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { ResultContainer } from './styles/Result.styled.js';
 import { scanRepos } from '../functions/fetches.js';
+import { smoothScrollToResult } from '../functions/utilities.js';
 
 function Result(props) {
     const userName = props.userName;
@@ -13,6 +14,7 @@ function Result(props) {
         async function createScanResult(userName, repoName) {
             const scanResult = await scanRepos(userName, repoName);
             setResult(scanResult);
+            smoothScrollToResult(); //every time the result is generated, smoothly scroll it into the port view.
         }
         createScanResult(userName, repoToScan);
         // eslint-disable-next-line react-hooks/exhaustive-deps

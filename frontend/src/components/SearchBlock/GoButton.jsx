@@ -1,5 +1,6 @@
 import React from 'react';
 import { fetchRepos } from '../../functions/fetches';
+import { Button } from '../../components/styles/Button.styled.js';
 
 function GoButton(props) {
     const userName = props.userName;
@@ -29,7 +30,7 @@ function GoButton(props) {
         } */
     }
 
-    return <button onClick={getRepos}>Go</button>;
+    return <Button onClick={getRepos}>Go</Button>;
 }
 
 export default GoButton;
